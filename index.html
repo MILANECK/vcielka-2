@@ -553,7 +553,7 @@ button{outline:none;border:none;}
 =========================== -->
 <nav class="nav">
   <a href="#" class="nav-logo">
-    <img src="VCIELKA_LOGO.png" alt="Školka Včielka" class="cms-logo" style="height:50px;width:auto;object-fit:contain;"/>
+    <img src="VCIELKA LOGO.png" alt="Školka Včielka" class="cms-logo" style="height:50px;width:auto;object-fit:contain;"/>
   </a>
   <nav class="nav-links">
     <a href="#o-nas">O nás</a>
@@ -871,11 +871,11 @@ button{outline:none;border:none;}
             <div class="contact-sub">kliknutím zavoláte</div>
           </div>
       </a>
-      <a class="contact-card green" href="/cdn-cgi/l/email-protection#70191e161f30031b1f1c1b115d061319151c1b115e031b">
+      <a class="contact-card green" href="/cdn-cgi/l/email-protection#3851565e57784b5357545359154e5b515d545359164b53">
           <div class="contact-icon">✉️</div>
           <div class="contact-body">
             <div class="contact-label">E-mail</div>
-            <div class="cms-email contact-value"><span class="__cf_email__" data-cfemail="d6bfb8b0b996a5bdb9babdb7fba0b5bfb3babdb7f8a5bd">[email&#160;protected]</span></div>
+            <div class="cms-email contact-value"><span class="__cf_email__" data-cfemail="0960676f66497a6266656268247f6a606c656268277a62">[email&#160;protected]</span></div>
             <div class="contact-sub">kliknutím napíšete</div>
           </div>
       </a>
@@ -912,7 +912,7 @@ button{outline:none;border:none;}
   <div class="footer-grid">
     <div>
       <div style="display:flex;align-items:center;gap:12px;margin-bottom:11px;">
-        <img src="VCIELKA_LOGO.png" alt="Včielka" class="cms-logo" style="height:40px;width:auto;object-fit:contain;"/>
+        <img src="VCIELKA LOGO.png" alt="Včielka" class="cms-logo" style="height:40px;width:auto;object-fit:contain;"/>
         <h4 style="margin:0;">Školka Včielka</h4>
       </div>
       <p class="footer-desc" id="cms-footer-desc">Súkromná materská škola akreditovaná MŠVVaŠ SR. Program Zvedavá Včielka pre deti od 2,5 do 6 rokov v Ružinove, Bratislava.</p>
@@ -933,7 +933,7 @@ button{outline:none;border:none;}
       <h4>Kontakt</h4>
       <span class="footer-link">Sečovská 144/3, Ružinov</span>
       <a href="tel:0918607935" class="footer-link">0918 607 935</a>
-      <a href="/cdn-cgi/l/email-protection#afc6c1c9c0efdcc4c0c3c4ce82d9ccc6cac3c4ce81dcc4" class="footer-link"><span class="__cf_email__" data-cfemail="6d04030b022d1e060201060c401b0e040801060c431e06">[email&#160;protected]</span></a>
+      <a href="/cdn-cgi/l/email-protection#83eaede5ecc3f0e8ecefe8e2aef5e0eae6efe8e2adf0e8" class="footer-link"><span class="__cf_email__" data-cfemail="3c55525a537c4f575350575d114a5f555950575d124f57">[email&#160;protected]</span></a>
       <span class="footer-link">Po–Pia: 7:00 – 17:00</span>
     </div>
   </div>
@@ -986,25 +986,9 @@ document.addEventListener('DOMContentLoaded',function(){
 const burger=document.getElementById('burger');
 const menu=document.getElementById('mobileMenu');
 const menuClose=document.getElementById('menuClose');
-burger.addEventListener('click',function(){
-  var o=menu.classList.toggle('open');
-  document.body.style.overflow=o?'hidden':'';
-});
-menuClose.addEventListener('click',function(){
-  menu.classList.remove('open');
-  document.body.style.overflow='';
-});
-menu.addEventListener('click',function(e){
-  var a=e.target.closest('a');
-  if(!a) return;
-  menu.classList.remove('open');
-  document.body.style.overflow='';
-  var h=a.getAttribute('href');
-  if(h&&h.startsWith('#')){
-    e.preventDefault();
-    setTimeout(function(){var t=document.querySelector(h);if(t)t.scrollIntoView({behavior:'smooth'});},50);
-  }
-});
+burger.addEventListener('click',function(){var o=menu.classList.toggle('open');document.body.style.overflow=o?'hidden':'';});
+menuClose.addEventListener('click',function(){menu.classList.remove('open');document.body.style.overflow='';});
+menu.addEventListener('click',function(e){var a=e.target.closest('a');if(!a)return;menu.classList.remove('open');document.body.style.overflow='';var h=a.getAttribute('href');if(h&&h.startsWith('#')){e.preventDefault();setTimeout(function(){var t=document.querySelector(h);if(t)t.scrollIntoView({behavior:'smooth'});},50);}});
 
 // ===== SCROLL FADE IN =====
 const obs=new IntersectionObserver((entries)=>{
@@ -1343,7 +1327,6 @@ function openNewsFromHero(){
   const blob = document.getElementById('heroNewsBlob');
   if(blob && blob._newsId) {
     openNewsPopupById(blob._newsId);
-
 }
 function openNewsPopupById(id){
   const news = (window._cmsNews||[]).find(n => n.id === id);
