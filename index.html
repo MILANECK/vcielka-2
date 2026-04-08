@@ -871,11 +871,11 @@ button{outline:none;border:none;}
             <div class="contact-sub">kliknutím zavoláte</div>
           </div>
       </a>
-      <a class="contact-card green" href="/cdn-cgi/l/email-protection#7e171018113e0d151112151f53081d171b12151f500d15">
+      <a class="contact-card green" href="/cdn-cgi/l/email-protection#a9c0c7cfc6e9dac2c6c5c2c884dfcac0ccc5c2c887dac2">
           <div class="contact-icon">✉️</div>
           <div class="contact-body">
             <div class="contact-label">E-mail</div>
-            <div class="cms-email contact-value"><span class="__cf_email__" data-cfemail="9ef7f0f8f1deedf5f1f2f5ffb3e8fdf7fbf2f5ffb0edf5">[email&#160;protected]</span></div>
+            <div class="cms-email contact-value"><span class="__cf_email__" data-cfemail="80e9eee6efc0f3ebefecebe1adf6e3e9e5ecebe1aef3eb">[email&#160;protected]</span></div>
             <div class="contact-sub">kliknutím napíšete</div>
           </div>
       </a>
@@ -933,7 +933,7 @@ button{outline:none;border:none;}
       <h4>Kontakt</h4>
       <span class="footer-link">Sečovská 144/3, Ružinov</span>
       <a href="tel:0918607935" class="footer-link">0918 607 935</a>
-      <a href="/cdn-cgi/l/email-protection#7d14131b123d0e161211161c500b1e141811161c530e16" class="footer-link"><span class="__cf_email__" data-cfemail="1871767e77586b7377747379356e7b717d747379366b73">[email&#160;protected]</span></a>
+      <a href="/cdn-cgi/l/email-protection#7811161e17380b1317141319550e1b111d141319560b13" class="footer-link"><span class="__cf_email__" data-cfemail="3851565e57784b5357545359154e5b515d545359164b53">[email&#160;protected]</span></a>
       <span class="footer-link">Po–Pia: 7:00 – 17:00</span>
     </div>
   </div>
@@ -1146,13 +1146,13 @@ async function loadCMS() {
       window._cmsNews = newsList;
       const container = document.getElementById('cms-news');
       if (container) container.innerHTML = newsList.map(n => `
-        <div class="news-card ${n.color}">
+        <div class="news-card ${n.color}" style="cursor:pointer;" onclick="openNewsPopupById(${n.id})">
           <div class="news-img">${n.photo_url ? '<img src="'+n.photo_url+'" alt=""/>' : '📸 foto akcie'}</div>
           <div class="news-body">
             <div class="news-date">${new Date(n.published_at||n.created_at).toLocaleDateString('sk-SK',{day:'numeric',month:'long',year:'numeric'})}</div>
             <div class="news-title">${n.title}</div>
             <div class="news-excerpt">${n.excerpt||''}</div>
-            <a href="noviny.html?id=${n.id}" class="news-more">Čítať viac →</a>
+            <a href="#" onclick="event.stopPropagation();openNewsPopupById(${n.id});return false;" class="news-more">Čítať viac →</a>
           </div>
         </div>
       `).join('');
@@ -1380,18 +1380,4 @@ document.addEventListener('DOMContentLoaded', function(){
   const lbClose = document.getElementById('lbClose');
   const lb = document.getElementById('lightbox');
   if(lbPrev) lbPrev.addEventListener('click', e=>{e.stopPropagation();lbGo(-1);});
-  if(lbNext) lbNext.addEventListener('click', e=>{e.stopPropagation();lbGo(1);});
-});
-</script>
-
-<script>
-// Open news popup on card/link click
-document.addEventListener('click', function(e) {
-  var link = e.target.closest('.news-more');
-  if (link) { e.preventDefault(); e.stopPropagation(); openNewsPopup(link); return; }
-  var card = e.target.closest('.news-card');
-  if (card && e.target.tagName !== 'A') { openNewsPopup(card); }
-});
-</script>
-</body>
-</html>
+  if(lbNext) lbNext
